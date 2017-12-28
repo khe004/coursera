@@ -16,17 +16,11 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCostMulti) and gradient here.
     %
-
-
-
-
-
-
-
-
-
-
-
+    predict = zeros(size(X,2), 1);
+    for i = 1:size(X,2)
+        predict(i) = theta(i) - alpha / m * sum((X * theta - y).* X(:,i));
+    end
+    theta = predict;
     % ============================================================
 
     % Save the cost J in every iteration    
